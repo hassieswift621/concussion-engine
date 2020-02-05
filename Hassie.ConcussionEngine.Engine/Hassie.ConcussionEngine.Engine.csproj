@@ -48,6 +48,14 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Component\Data\CircleCollisionComponent.cs" />
+    <Compile Include="Component\Data\CollidableComponent.cs" />
+    <Compile Include="Component\Data\HitboxCollisionComponent.cs" />
+    <Compile Include="Component\Data\PhysicsComponent.cs" />
+    <Compile Include="Component\Data\PositionComponent.cs" />
+    <Compile Include="Component\Data\Texture2DRenderComponent.cs" />
+    <Compile Include="Component\Data\TransformComponent.cs" />
+    <Compile Include="Component\IComponent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
