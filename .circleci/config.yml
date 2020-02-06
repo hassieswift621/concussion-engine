@@ -15,7 +15,7 @@ jobs:
           - dotnet-packages-v1-{{ checksum "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" }}
     - run:
         name: "Fetch dependencies"
-        command: msbuild "Concussion Engine.sln" -t:restore
+        command: nuget restore "Concussion Engine.sln"
     - save_cache:
         paths:
           - C:\Users\circleci\.nuget\packages
