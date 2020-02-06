@@ -10,11 +10,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
     /// Component to tag an entity to be checked against collidable entities
     /// using the bounding circle collision method.
     /// </summary>
-    public struct CircleCollisionComponent : IComponent
+    public struct CircleCollisionComponent : IComponent, IEquatable<CircleCollisionComponent>
     {
-        /// <summary>
-        /// The ID of the entity.
-        /// </summary>
         public int EntityID { get; }
 
         /// <summary>
@@ -24,6 +21,16 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         public CircleCollisionComponent(int entityID)
         {
             EntityID = entityID;
+        }
+
+        public bool Equals(CircleCollisionComponent other)
+        {
+            if (EntityID == other.EntityID)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

@@ -9,11 +9,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
     /// <summary>
     /// Component to store physics properties.
     /// </summary>
-    public struct PhysicsComponent
+    public struct PhysicsComponent : IComponent, IEquatable<PhysicsComponent>
     {
-        /// <summary>
-        /// The ID of the entity.
-        /// </summary>
         public int EntityID { get; }
 
         /// <summary>
@@ -62,8 +59,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         /// <param name="mass">The mass of the entity.</param>
         /// <param name="velocityX">The velocity along the x axis.</param>
         /// <param name="velocityY">The velocity along the y axis.</param>
-        public PhysicsComponent(int entityID, float accelerationX = 0, float accelerationY = 0, float gravityX = 0,
-            float gravityY = 0, float mass = 0, float velocityX = 0, float velocityY = 0)
+        public PhysicsComponent(int entityID, float accelerationX, float accelerationY, float gravityX, float gravityY, 
+            float mass, float velocityX, float velocityY)
         {
             EntityID = entityID;
             AccelerationX = accelerationX;
@@ -73,6 +70,23 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
             Mass = mass;
             VelocityX = velocityX;
             VelocityY = velocityY;
+        }
+
+        public bool Equals(PhysicsComponent other)
+        {
+            if (EntityID == other.EntityID &&
+                AccelerationX == other.AccelerationX &&
+                AccelerationY == other.AccelerationY &&
+                GravityX == other.GravityX &&
+                GravityY == other.GravityY &&
+                Mass == other.Mass &&
+                VelocityX == other.VelocityX &&
+                VelocityY == other.VelocityY)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

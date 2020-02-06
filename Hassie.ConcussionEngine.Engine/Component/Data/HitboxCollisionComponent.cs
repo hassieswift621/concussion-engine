@@ -10,11 +10,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
     /// Component to tag an entity to be checked against collidable entities
     /// using the hitbox collision method.
     /// </summary>
-    public struct HitboxCollisionComponent : IComponent
+    public struct HitboxCollisionComponent : IComponent, IEquatable<HitboxCollisionComponent>
     {
-        /// <summary>
-        /// The ID of the entity.
-        /// </summary>
         public int EntityID { get; }
 
         /// <summary>
@@ -24,6 +21,16 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         public HitboxCollisionComponent(int entityID)
         {
             EntityID = entityID;
+        }
+
+        public bool Equals(HitboxCollisionComponent other)
+        {
+            if (EntityID == other.EntityID)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

@@ -9,11 +9,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
     /// <summary>
     /// Component to store transform properties of an entity.
     /// </summary>
-    public struct TransformComponent : IComponent
+    public struct TransformComponent : IComponent, IEquatable<TransformComponent>
     {
-        /// <summary>
-        /// The ID of the entity.
-        /// </summary>
         public int EntityID { get; }
 
         /// <summary>
@@ -44,13 +41,27 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         /// <param name="rotation">The rotation of the entity.</param>
         /// <param name="scale">The scale of the entity.</param>
         /// <param name="width">The width of the entity.</param>
-        public TransformComponent(int entityID, int height = 0, float rotation = 0, float scale = 0, int width = 0)
+        public TransformComponent(int entityID, int height, float rotation, float scale, int width)
         {
             EntityID = entityID;
             Height = height;
             Rotation = rotation;
             Scale = scale;
             Width = width;
+        }
+
+        public bool Equals(TransformComponent other)
+        {
+            if (EntityID == other.EntityID &&
+                Height == other.Height &&
+                Rotation == other.Rotation &&
+                Scale == other.Scale &&
+                Width == other.Width)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

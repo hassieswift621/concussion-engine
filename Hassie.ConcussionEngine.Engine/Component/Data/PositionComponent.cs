@@ -9,11 +9,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
     /// <summary>
     /// Component to store a 2D position of an entity.
     /// </summary>
-    public struct PositionComponent : IComponent
+    public struct PositionComponent : IComponent, IEquatable<PositionComponent>
     {
-        /// <summary>
-        /// The ID of the entity.
-        /// </summary>
         public int EntityID { get; }
 
         /// <summary>
@@ -30,11 +27,23 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         /// <param name="entityID">The ID of the entity.</param>
         /// <param name="x">The x coordinate of the entity.</param>
         /// <param name="y">The y coordinate of the entity.</param>
-        public PositionComponent(int entityID, float x = 0, float y = 0)
+        public PositionComponent(int entityID, float x, float y)
         {
             EntityID = entityID;
             X = x;
             Y = y;
+        }
+
+        public bool Equals(PositionComponent other)
+        {
+            if (EntityID == other.EntityID &&
+                X == other.X &&
+                Y == other.Y)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }
