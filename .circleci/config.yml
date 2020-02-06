@@ -12,14 +12,14 @@ jobs:
     - checkout
     - restore_cache:
         keys:
-          - dotnet-packages-v1-{{ checksum "Hassie.ConcussionEngine.Engine.csproj" }}
+          - dotnet-packages-v1-{{ checksum "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" }}
     - run:
         name: "Fetch dependencies"
-        command: dotnet.exe restore
+        command: nuget restore "Concussion Engine.sln"
     - save_cache:
         paths:
           - C:\Users\circleci\.nuget\packages
-        key: dotnet-packages-v1-{{ checksum "Hassie.ConcussionEngine.Engine.csproj" }}
+        key: dotnet-packages-v1-{{ checksum "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" }}
     - run:
         name: "Build"
-        command: dotnet.exe publish -c Release -r win10-x64
+        command: msbuild.exe "Concussion Engine.sln"
