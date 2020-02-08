@@ -17,19 +17,16 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         /// Initialises a new instance of the component.
         /// </summary>
         /// <param name="entityID">The ID of the entity.</param>
-        public CollidableComponent(int entityID)
-        {
-            EntityID = entityID;
-        }
+        public CollidableComponent(int entityID) => EntityID = entityID;
 
-        public bool Equals(CollidableComponent other)
-        {
-            if (EntityID == other.EntityID)
-            {
-                return true;
-            }
+        public bool Equals(CollidableComponent other) => EntityID == other.EntityID;
 
-            return false;
-        }
+        public override bool Equals(object obj) => obj is CollidableComponent component ? Equals(component) : false;
+
+        public override int GetHashCode() => EntityID.GetHashCode();
+
+        public static bool operator ==(CollidableComponent left, CollidableComponent right) => left.Equals(right);
+
+        public static bool operator !=(CollidableComponent left, CollidableComponent right) => !(left == right);
     }
 }

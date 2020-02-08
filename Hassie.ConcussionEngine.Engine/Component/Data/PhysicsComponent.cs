@@ -59,8 +59,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         /// <param name="mass">The mass of the entity.</param>
         /// <param name="velocityX">The velocity along the x axis.</param>
         /// <param name="velocityY">The velocity along the y axis.</param>
-        public PhysicsComponent(int entityID, float accelerationX, float accelerationY, float gravityX, float gravityY, 
-            float mass, float velocityX, float velocityY)
+        public PhysicsComponent(int entityID, float accelerationX, float accelerationY, float gravityX, float gravityY,
+                                float mass, float velocityX, float velocityY)
         {
             EntityID = entityID;
             AccelerationX = accelerationX;
@@ -72,21 +72,18 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
             VelocityY = velocityY;
         }
 
-        public bool Equals(PhysicsComponent other)
-        {
-            if (EntityID == other.EntityID &&
-                AccelerationX == other.AccelerationX &&
-                AccelerationY == other.AccelerationY &&
-                GravityX == other.GravityX &&
-                GravityY == other.GravityY &&
-                Mass == other.Mass &&
-                VelocityX == other.VelocityX &&
-                VelocityY == other.VelocityY)
-            {
-                return true;
-            }
+        public bool Equals(PhysicsComponent other) =>
+            (EntityID, AccelerationX, AccelerationY, GravityX, GravityY, Mass, VelocityX, VelocityX) ==
+                (other.EntityID, other.AccelerationX, other.AccelerationY, other.GravityX, other.GravityY,
+                    other.Mass, other.VelocityX, other.VelocityY);
 
-            return false;
-        }
+        public override bool Equals(object obj) => obj is PhysicsComponent component ? Equals(component) : false;
+
+        public override int GetHashCode() => 
+            (EntityID, AccelerationX, AccelerationY, GravityX, GravityY, Mass, VelocityX, VelocityX).GetHashCode();
+
+        public static bool operator ==(PhysicsComponent left, PhysicsComponent right) => left.Equals(right);
+
+        public static bool operator !=(PhysicsComponent left, PhysicsComponent right) => !(left == right);
     }
 }

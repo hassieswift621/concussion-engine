@@ -34,16 +34,14 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
             Y = y;
         }
 
-        public bool Equals(PositionComponent other)
-        {
-            if (EntityID == other.EntityID &&
-                X == other.X &&
-                Y == other.Y)
-            {
-                return true;
-            }
+        public bool Equals(PositionComponent other) => (EntityID, X, Y) == (other.EntityID, other.X, other.Y);
 
-            return false;
-        }
+        public override bool Equals(object obj) => obj is PositionComponent component ? Equals(component) : false;
+
+        public override int GetHashCode() => (EntityID, X, Y).GetHashCode();
+
+        public static bool operator ==(PositionComponent left, PositionComponent right) => left.Equals(right);
+
+        public static bool operator !=(PositionComponent left, PositionComponent right) => !(left == right);
     }
 }

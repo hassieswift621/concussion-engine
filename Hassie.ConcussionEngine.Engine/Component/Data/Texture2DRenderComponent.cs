@@ -38,16 +38,15 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
             Texture = texture;
         }
 
-        public bool Equals(Texture2DRenderComponent other)
-        {
-            if (EntityID == other.EntityID &&
-                RenderOrder == other.RenderOrder &&
-                Texture == other.Texture)
-            {
-                return true;
-            }
+        public bool Equals(Texture2DRenderComponent other) =>
+            (EntityID, RenderOrder, Texture) == (other.EntityID, other.RenderOrder, other.Texture);
 
-            return false;
-        }
+        public override bool Equals(object obj) => obj is Texture2DRenderComponent component ? Equals(component) : false;
+
+        public override int GetHashCode() => (EntityID, RenderOrder, Texture).GetHashCode();
+
+        public static bool operator ==(Texture2DRenderComponent left, Texture2DRenderComponent right) => left.Equals(right);
+
+        public static bool operator !=(Texture2DRenderComponent left, Texture2DRenderComponent right) => !(left == right);
     }
 }

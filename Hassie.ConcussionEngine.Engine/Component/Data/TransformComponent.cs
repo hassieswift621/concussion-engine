@@ -50,18 +50,15 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
             Width = width;
         }
 
-        public bool Equals(TransformComponent other)
-        {
-            if (EntityID == other.EntityID &&
-                Height == other.Height &&
-                Rotation == other.Rotation &&
-                Scale == other.Scale &&
-                Width == other.Width)
-            {
-                return true;
-            }
+        public bool Equals(TransformComponent other) =>
+            (EntityID, Height, Rotation, Scale, Width) == (other.EntityID, other.Height, other.Rotation, other.Scale, other.Width);
 
-            return false;
-        }
+        public override bool Equals(object obj) => obj is TransformComponent component ? Equals(component) : false;
+
+        public override int GetHashCode() => (EntityID, Height, Rotation, Scale, Width).GetHashCode();
+
+        public static bool operator ==(TransformComponent left, TransformComponent right) => left.Equals(right);
+
+        public static bool operator !=(TransformComponent left, TransformComponent right) => !(left == right);
     }
 }
