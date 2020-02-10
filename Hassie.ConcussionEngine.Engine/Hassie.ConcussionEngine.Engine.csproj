@@ -56,6 +56,16 @@
     <Compile Include="Component\Data\Texture2DRenderComponent.cs" />
     <Compile Include="Component\Data\TransformComponent.cs" />
     <Compile Include="Component\IComponent.cs" />
+    <Compile Include="Component\Registry\AbstractComponentRegistry.cs" />
+    <Compile Include="Component\Registry\CircleCollisionCR.cs" />
+    <Compile Include="Component\Registry\CollidableComponentCR.cs" />
+    <Compile Include="Component\Registry\HitboxCollisionCR.cs" />
+    <Compile Include="Component\Registry\IComponentRegistry.cs" />
+    <Compile Include="Component\Registry\IRegistry.cs" />
+    <Compile Include="Component\Registry\PhysicsComponentCR.cs" />
+    <Compile Include="Component\Registry\PositionCR.cs" />
+    <Compile Include="Component\Registry\Texture2DRenderCR.cs" />
+    <Compile Include="Component\Registry\TransformCR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
