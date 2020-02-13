@@ -13,7 +13,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
     /// This is inherited by all component registries.
     /// </summary>
     /// <typeparam name="T">The type of component that the registry stores.</typeparam>
-    public class AbstractComponentRegistry<T> : IComponentRegistry<T> where T : struct, IComponent
+    public abstract class AbstractComponentRegistry<T> : IComponentRegistry<T> where T : struct, IComponent
     {
         protected readonly IDictionary<int, int> entities; // Map of entities and their component indexes in the list.
         protected readonly IList<T> components; // List of components.
