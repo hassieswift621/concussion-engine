@@ -24,7 +24,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             }
 
             // If size of list is 1, simply remove entity.
-            if (components.Count == 1)
+            if (Count == 1)
             {
                 components.RemoveAt(0);
                 entities.Remove(entityID);
@@ -32,7 +32,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             }
 
             // Otherwise, update the indexes of components from the index of removal + 1.
-            for (int i = entities[entityID] + 1; i < components.Count; i++)
+            for (int i = entities[entityID] + 1; i < Count; i++)
             {
                 entities[components[i].EntityID] -= 1;
             }

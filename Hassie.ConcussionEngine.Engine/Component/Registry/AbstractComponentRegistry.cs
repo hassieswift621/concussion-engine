@@ -54,7 +54,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             }
 
             // If size of list is 1, simply remove entity.
-            if (components.Count == 1)
+            if (Count == 1)
             {
                 components.RemoveAt(0);
                 entities.Remove(entityID);
@@ -65,7 +65,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             // Otherwise, we'll have to update every index in the map from the point of removal.
             T component = components.Last();
             components[entities[entityID]] = component;
-            components.RemoveAt(components.Count - 1);
+            components.RemoveAt(Count - 1);
             entities.Remove(entityID);
         }
 
@@ -80,7 +80,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             else
             {
                 // Add.
-                entities[component.EntityID] = components.Count;
+                entities[component.EntityID] = Count;
                 components.Add(component);
             }
         }
