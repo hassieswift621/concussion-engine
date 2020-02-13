@@ -17,9 +17,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// <summary>
         /// Tests the initialisation of the component.
         /// </summary>
-        [TestCase(1, 1f, 0f, 0f, 0f, 1f, 2.5f, 0f)]
-        [TestCase(5, 0f, -1.965f, 0f, 0.125f, 0.799f, 3f, 1.255f)]
-        [TestCase(10, 0f, 0f, -0.0233f, 0f, 100.999f, 1f, 0f)]
+        [TestCase(514, 0f, -1.965f, 0f, 0.125f, 0.799f, 3f, 1.255f)]
         public void InitComponent(int entityID, float accelerationX, float accelerationY, float gravityX, float gravityY,
                                   float mass, float velocityX, float velocityY)
         {
@@ -44,9 +42,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// Tests struct equality.
         /// Expected result is true.
         /// </summary>
-        [TestCase(1, 1f, 0f, 0f, 0f, 1f, 2.5f, 0f)]
-        [TestCase(5, 0f, -1.965f, 0f, 0.125f, 0.799f, 3f, 1.255f)]
-        [TestCase(10, 0f, 0f, -0.0233f, 0f, 100.999f, 1f, 0f)]
+        [TestCase(18, 0f, 0f, -0.0233f, 0f, 100.999f, 1f, 0f)]
         public void Equals_ShouldBeEqual(int entityID, float accelerationX, float accelerationY, float gravityX,
                                          float gravityY, float mass, float velocityX, float velocityY)
         {
@@ -66,9 +62,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// Tests struct equality.
         /// Expected result is false.
         /// </summary>
-        [TestCase(1, 1f, 0f, 0f, 0f, 1f, 2.5f, 0f, 18, -1f, 0f, 0f, 0f, 1f, 2.5f, 0f)]
-        [TestCase(5, 0f, -1.965f, 0f, 0.125f, 0.799f, 3f, 1.255f, 1900, 0f, 1.965f, 0f, 0.125f, 0.799f, 3f, 1.255f)]
-        [TestCase(10, 0f, 0f, -0.0233f, 0f, 100.999f, 1f, 0f, 10491, 0f, 0f, -0.0233f, 0f, -100.999f, 1f, 0f)]
+        [TestCase(37, 1f, 0f, 0f, 0f, 1f, 2.5f, 0f, 18, -1f, 0f, 0f, 0f, 1f, 2.5f, 0f)]
 
         public void Equals_ShouldNotBeEqual(int id1, float accelerationX1, float accelerationY1, float gravityX1,
                                             float gravityY1, float mass1, float velocityX1, float velocityY1, int id2,
