@@ -28,24 +28,9 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             components = new List<T>();
         }
 
-        public virtual T this[int entityID]
+        public T this[int entityID]
         {
             get => components[entities[entityID]];
-            set
-            {
-                // Check if the entity exists.
-                if (entities.ContainsKey(entityID))
-                {
-                    // Overwrite.
-                    components[entities[entityID]] = value;
-                }
-                else
-                {
-                    // Add.
-                    entities[entityID] = components.Count;
-                    components.Add(value);
-                }
-            }
         }
 
         public int Count => components.Count;
@@ -82,6 +67,22 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             components[entities[entityID]] = component;
             components.RemoveAt(components.Count - 1);
             entities.Remove(entityID);
+        }
+
+        public virtual void Set(T component)
+        {
+            // Check if the entity exists.
+            if (entities.ContainsKey(component.EntityID))
+            {
+                // Overwrite.
+                components[entities[component.EntityID]] = component;
+            }
+            else
+            {
+                // Add.
+                entities[component.EntityID] = components.Count;
+                components.Add(component);
+            }
         }
 
         IEnumerator IEnumerable.GetEnumerator()

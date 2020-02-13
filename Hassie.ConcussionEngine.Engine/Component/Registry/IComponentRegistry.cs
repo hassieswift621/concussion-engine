@@ -17,11 +17,11 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
     public interface IComponentRegistry<T> : IRegistry, IEnumerable<T> where T : struct, IComponent
     {
         /// <summary>
-        /// Gets or sets a component for an entity.
+        /// Gets a component for an entity.
         /// </summary>
         /// <param name="entityID">The ID of the entity.</param>
         /// <returns>The component.</returns>
-        T this[int entityID] { get; set; }
+        T this[int entityID] { get; }
 
         /// <summary>
         /// Checks whether a component for an entity exists.
@@ -35,5 +35,11 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
         /// </summary>
         /// <param name="entityID">The ID of the entity.</param>
         void Remove(int entityID);
+
+        /// <summary>
+        /// Sets the component for an entity.
+        /// </summary>
+        /// <param name="component">The component.</param>
+        void Set(T component);
     }
 }
