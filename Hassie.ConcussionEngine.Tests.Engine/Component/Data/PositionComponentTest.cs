@@ -17,7 +17,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// <summary>
         /// Tests the initialisation of the component.
         /// </summary>
-        [TestCase(10, -3.423f, 248.647f)]
+        [TestCase(20, -3.423f, 248.647f)]
         public void InitComponent(int entityID, float x, float y)
         {
             // Arrange.
@@ -36,7 +36,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// Tests struct equality.
         /// Expected result is true.
         /// </summary>
-        [TestCase(5, 64.3f, 0.33f)]
+        [TestCase(392, 64.3f, 0.33f)]
         public void Equals_ShouldBeEqual(int entityID, float x, float y)
         {
             // Arrange.
@@ -55,7 +55,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// Tests struct equality.
         /// Expected result is false.
         /// </summary>
-        [TestCase(10, -3.423f, 248.647f, 121, 2.423f, -248f)]
+        [TestCase(207, -3.423f, 248.647f, 121, 2.423f, -248f)]
 
         public void Equals_ShouldNotBeEqual(int id1, float x1, float y1, int id2, float x2, float y2)
         {
