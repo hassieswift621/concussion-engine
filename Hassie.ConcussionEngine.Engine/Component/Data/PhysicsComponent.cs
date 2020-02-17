@@ -73,14 +73,14 @@ namespace Hassie.ConcussionEngine.Engine.Component.Data
         }
 
         public bool Equals(PhysicsComponent other) =>
-            (EntityID, AccelerationX, AccelerationY, GravityX, GravityY, Mass, VelocityX, VelocityX) ==
+            (EntityID, AccelerationX, AccelerationY, GravityX, GravityY, Mass, VelocityX, VelocityY) ==
                 (other.EntityID, other.AccelerationX, other.AccelerationY, other.GravityX, other.GravityY,
                     other.Mass, other.VelocityX, other.VelocityY);
 
         public override bool Equals(object obj) => obj is PhysicsComponent component ? Equals(component) : false;
 
         public override int GetHashCode() => 
-            (EntityID, AccelerationX, AccelerationY, GravityX, GravityY, Mass, VelocityX, VelocityX).GetHashCode();
+            (EntityID, AccelerationX, AccelerationY, GravityX, GravityY, Mass, VelocityX, VelocityY).GetHashCode();
 
         public static bool operator ==(PhysicsComponent left, PhysicsComponent right) => left.Equals(right);
 
