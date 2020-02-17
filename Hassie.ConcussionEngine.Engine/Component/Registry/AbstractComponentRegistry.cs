@@ -21,7 +21,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
         /// <summary>
         /// Constructor for the component registry.
         /// </summary>
-        public AbstractComponentRegistry()
+        protected AbstractComponentRegistry()
         {
             // Initialise map and list.
             entities = new Dictionary<int, int>();
