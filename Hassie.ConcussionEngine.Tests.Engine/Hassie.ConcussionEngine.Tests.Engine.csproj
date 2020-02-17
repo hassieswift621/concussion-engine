@@ -7,7 +7,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>Hassie.ConcussionEngine.Tests.Engine</RootNamespace>
     <AssemblyName>Hassie.ConcussionEngine.Tests.Engine</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
@@ -36,6 +36,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
@@ -56,7 +59,6 @@
     <Compile Include="Component\Data\PositionComponentTest.cs" />
     <Compile Include="Component\Data\Texture2DRenderComponentTest.cs" />
     <Compile Include="Component\Data\TransformComponentTest.cs" />
-    <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj">
