@@ -57,9 +57,9 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// Tests struct equality.
         /// Expected result is false.
         /// </summary>
-        [TestCase(207, -3.423f, 248.647f, 121, 2.423f, -248f)]
+        [TestCase(754, 60, 0f, 1.77f, 60, 478, 1200, 40f, 0.99f, 800)]
 
-        public void Equals_ShouldNotBeEqual(int id1, int height1, float rotation1, int scale1, int width1, int id2,
+        public void Equals_ShouldNotBeEqual(int id1, int height1, float rotation1, float scale1, int width1, int id2,
                                             int height2, float rotation2, float scale2, int width2)
         {
             // Arrange.

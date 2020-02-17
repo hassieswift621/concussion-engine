@@ -63,7 +63,6 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Data
         /// Expected result is false.
         /// </summary>
         [TestCase(37, 1f, 0f, 0f, 0f, 1f, 2.5f, 0f, 18, -1f, 0f, 0f, 0f, 1f, 2.5f, 0f)]
-
         public void Equals_ShouldNotBeEqual(int id1, float accelerationX1, float accelerationY1, float gravityX1,
                                             float gravityY1, float mass1, float velocityX1, float velocityY1, int id2,
                                             float accelerationX2, float accelerationY2, float gravityX2, float gravityY2,
