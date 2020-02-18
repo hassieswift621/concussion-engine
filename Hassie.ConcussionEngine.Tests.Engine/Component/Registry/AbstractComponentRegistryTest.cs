@@ -11,12 +11,11 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
 {
     /// <summary>
     /// Tests for the abstract component registry.
+    /// These tests cover all component registries except <see cref="Texture2DRenderComponent"/>.
     [TestFixture]
     public class AbstractComponentRegistryTest
     {
-        private class DefaultRegistry : AbstractComponentRegistry<PositionComponent> { }
-
-        private DefaultRegistry registry;
+        private PositionCR registry;
         private PositionComponent component1;
         private PositionComponent component2;
         private PositionComponent component3;
@@ -29,7 +28,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
         public void Setup()
         {
             // Arrange.
-            registry = new DefaultRegistry();
+            registry = new PositionCR();
             component1 = new PositionComponent(14, 125.36f, 250f);
             component2 = new PositionComponent(76, 340.988f, 4.5f);
             component3 = new PositionComponent(793, 34f, 76.666f);

@@ -60,6 +60,7 @@
     <Compile Include="Component\Data\Texture2DRenderComponentTest.cs" />
     <Compile Include="Component\Data\TransformComponentTest.cs" />
     <Compile Include="Component\Registry\AbstractComponentRegistryTest.cs" />
+    <Compile Include="Component\Registry\Texture2DRenderCRTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj">
