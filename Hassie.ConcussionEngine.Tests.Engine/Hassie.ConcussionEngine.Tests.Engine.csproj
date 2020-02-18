@@ -59,6 +59,7 @@
     <Compile Include="Component\Data\PositionComponentTest.cs" />
     <Compile Include="Component\Data\Texture2DRenderComponentTest.cs" />
     <Compile Include="Component\Data\TransformComponentTest.cs" />
+    <Compile Include="Component\Registry\AbstractComponentRegistryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj">
