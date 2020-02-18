@@ -102,7 +102,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
                 int left = 0;
                 int right = Count - 1;
                 int mid = -1;
-                while (left <= right)
+                while (left <= right && !found)
                 {
                     mid = (left + right) / 2;
 
@@ -116,6 +116,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
                             {
                                 found = true;
                                 insertIndex = i;
+                                break;
                             }
                         }
                     }
@@ -135,6 +136,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
                     // In this case, check the last mid item and insert before or after the set of components
                     // with the same render order of mid item.
                     int midRenderOrder = components[mid].RenderOrder;
+
                     if (midRenderOrder < renderOrder)
                     {
                         for (int i = mid + 1; i < Count; i++)
@@ -148,9 +150,10 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
                     }
                     else if (midRenderOrder > renderOrder)
                     {
-                        for (int i = mid - 1; i >= 0; i--)
+                        for (int i = mid; i > 0; i--)
                         {
-                            if (components[i].RenderOrder < midRenderOrder)
+                            // Peek.
+                            if (components[i - 1].RenderOrder < midRenderOrder)
                             {
                                 insertIndex = i;
                                 break;
@@ -167,6 +170,6 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             {
                 entities[components[i].EntityID] += 1;
             }
-        }  
+        }
     }
 }

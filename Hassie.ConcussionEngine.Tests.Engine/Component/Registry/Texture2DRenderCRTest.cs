@@ -60,6 +60,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
         /// Tests the adding of components to the registry, ensuring they are
         /// stored in order by their render order.
         /// </summary>
+        [Test]
         public void Add_ShouldBeOrderedByRenderOrder()
         {
             // Act.
