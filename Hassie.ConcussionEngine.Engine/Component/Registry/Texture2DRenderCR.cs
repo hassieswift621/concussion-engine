@@ -117,15 +117,15 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
                                 found = true;
                                 insertIndex = i;
                             }
-                            else if (components[mid].RenderOrder < renderOrder)
-                            {
-                                left = mid + 1;
-                            }
-                            else
-                            {
-                                right = mid - 1;
-                            }
                         }
+                    }
+                    else if (components[mid].RenderOrder < renderOrder)
+                    {
+                        left = mid + 1;
+                    }
+                    else
+                    {
+                        right = mid - 1;
                     }
                 }
 

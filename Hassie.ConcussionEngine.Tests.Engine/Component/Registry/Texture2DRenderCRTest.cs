@@ -47,10 +47,10 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
             // Act.
             registry.Set(component1);
             registry.Set(component2);
-            //registry.Set(component3);
-            //registry.Set(component4);
-            //registry.Set(component5);
-            //registry.Set(component6);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
 
             // Assert.
             Assert.Pass();
