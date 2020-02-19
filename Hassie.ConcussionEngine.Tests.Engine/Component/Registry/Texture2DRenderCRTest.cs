@@ -83,5 +83,146 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
             }
             Assert.Pass();
         }
+
+        /// <summary>
+        /// Test for getting components from the registry.
+        /// </summary>
+        [Test]
+        public void Get()
+        {
+            // Act.
+            registry.Set(component1);
+            registry.Set(component2);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
+
+            // Assert.
+            Assert.IsTrue(component1 == registry[component1.EntityID] &&
+                component2 == registry[component2.EntityID] &&
+                component3 == registry[component3.EntityID] &&
+                component4 == registry[component4.EntityID] &&
+                component5 == registry[component5.EntityID] &&
+                component6 == registry[component6.EntityID]);
+        }
+
+        /// <summary>
+        /// Test contains.
+        /// Expected result is true.
+        /// </summary>
+        [Test]
+        public void Contains_ShouldBeTrue()
+        {
+            // Act.
+            registry.Set(component1);
+            registry.Set(component2);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
+
+            // Assert.
+            Assert.IsTrue(registry.Contains(component1.EntityID) &&
+                registry.Contains(component2.EntityID) &&
+                registry.Contains(component3.EntityID) &&
+                registry.Contains(component4.EntityID) &&
+                registry.Contains(component5.EntityID) &&
+                registry.Contains(component6.EntityID));
+        }
+
+        /// <summary>
+        /// Test contains.
+        /// Expected result is false.
+        /// </summary>
+        [Test]
+        public void Contains_ShouldBeFalse()
+        {
+            // Act.
+            registry.Set(component1);
+            registry.Set(component2);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
+
+            // Assert.
+            Assert.IsFalse(registry.Contains(5));
+        }
+
+        /// <summary>
+        /// Test count.
+        /// Expected result is 6.
+        /// </summary>
+        [Test]
+        public void Count_ShouldBe6()
+        {
+            // Act.
+            registry.Set(component1);
+            registry.Set(component2);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
+
+            // Assert.
+            Assert.IsTrue(registry.Count == 6);
+        }
+
+        /// <summary>
+        /// Test for removing a component from the registry.
+        /// </summary>
+        [Test]
+        public void Remove()
+        {
+            // Arrange.
+            registry.Set(component1);
+            registry.Set(component2);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
+
+            // Act.
+            registry.Remove(component3.EntityID);
+
+            // Assert.
+            Assert.IsTrue(registry.Count == 5 && !registry.Contains(component3.EntityID));
+        }
+
+        /// <summary>
+        /// Test for removing a component from the registry
+        /// and ensuring the components are still in order,
+        /// </summary>
+        [Test]
+        public void Remove_ShouldBeInOrder()
+        {
+            // Arrange.
+            registry.Set(component1);
+            registry.Set(component2);
+            registry.Set(component3);
+            registry.Set(component4);
+            registry.Set(component5);
+            registry.Set(component6);
+
+            Texture2DRenderComponent[] orderedComponents = new Texture2DRenderComponent[] { 
+                component1, component5, component6, component2, component4
+            };
+
+            // Act.
+            registry.Remove(component3.EntityID);
+
+            // Assert.
+            int index = -1;
+            foreach (Texture2DRenderComponent component in registry)
+            {
+                index++;
+                if (component.EntityID != orderedComponents[index].EntityID)
+                {
+                    Assert.Fail();
+                }
+            }
+            Assert.Pass();
+        }
     }
 }
