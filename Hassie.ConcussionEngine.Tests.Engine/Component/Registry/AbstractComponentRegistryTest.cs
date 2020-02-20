@@ -52,7 +52,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
         }
 
         /// <summary>
-        /// Test for getting components from the registry.
+        /// Test for getting components from the registry by entity ID.
         /// </summary>
         [Test]
         public void Get()
@@ -64,10 +64,10 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
             registry.Set(component4);
 
             // Assert.
-            Assert.IsTrue(component1 == registry[component1.EntityID] &&
-                component2 == registry[component2.EntityID] &&
-                component3 == registry[component3.EntityID] &&
-                component4 == registry[component4.EntityID]);
+            Assert.IsTrue(component1 == registry.Get(component1.EntityID) &&
+                component2 == registry.Get(component2.EntityID) &&
+                component3 == registry.Get(component3.EntityID) &&
+                component4 == registry.Get(component4.EntityID));
         }
 
         /// <summary>

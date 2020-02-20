@@ -85,7 +85,7 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
         }
 
         /// <summary>
-        /// Test for getting components from the registry.
+        /// Test for getting components from the registry by entity ID.
         /// </summary>
         [Test]
         public void Get()
@@ -99,12 +99,12 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
             registry.Set(component6);
 
             // Assert.
-            Assert.IsTrue(component1 == registry[component1.EntityID] &&
-                component2 == registry[component2.EntityID] &&
-                component3 == registry[component3.EntityID] &&
-                component4 == registry[component4.EntityID] &&
-                component5 == registry[component5.EntityID] &&
-                component6 == registry[component6.EntityID]);
+            Assert.IsTrue(component1 == registry.Get(component1.EntityID) &&
+                component2 == registry.Get(component2.EntityID) &&
+                component3 == registry.Get(component3.EntityID) &&
+                component4 == registry.Get(component4.EntityID) &&
+                component5 == registry.Get(component5.EntityID) &&
+                component6 == registry.Get(component6.EntityID));
         }
 
         /// <summary>
@@ -213,11 +213,9 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Registry
             registry.Remove(component3.EntityID);
 
             // Assert.
-            int index = -1;
-            foreach (Texture2DRenderComponent component in registry)
+            for (int i = 0; i < registry.Count; i++)
             {
-                index++;
-                if (component.EntityID != orderedComponents[index].EntityID)
+                if (registry[i].EntityID != orderedComponents[i].EntityID)
                 {
                     Assert.Fail();
                 }

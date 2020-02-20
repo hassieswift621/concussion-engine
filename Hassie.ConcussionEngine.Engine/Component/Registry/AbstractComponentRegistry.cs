@@ -28,22 +28,19 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             components = new List<T>();
         }
 
-        public T this[int entityID]
+        public T this[int index]
         {
-            get => components[entities[entityID]];
+            get => components[index];
+            set => components[index] = value;
         }
 
         public int Count => components.Count;
 
-        public bool Contains(int entityID)
-        {
-            return entities.ContainsKey(entityID);
-        }
+        public bool Contains(int entityID) => entities.ContainsKey(entityID);
 
-        public IEnumerator<T> GetEnumerator()
-        {
-            return components.GetEnumerator();
-        }
+        public T Get(int entityID) => components[entities[entityID]];
+
+        public IEnumerator<T> GetEnumerator() => components.GetEnumerator();
 
         public virtual void Remove(int entityID)
         {
@@ -85,9 +82,6 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             }
         }
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return components.GetEnumerator();
-        }
+        IEnumerator IEnumerable.GetEnumerator() => components.GetEnumerator();
     }
 }
