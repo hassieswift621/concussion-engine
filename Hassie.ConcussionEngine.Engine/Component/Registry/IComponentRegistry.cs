@@ -9,19 +9,12 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
     /// <summary>
     /// A component registry stores a set of components for a component type.
     /// </summary>
-    /// <typeparam name="T">The component type.</typeparam>
-    /// <remarks>
-    /// A component registry implements <see cref="IEnumerable{T}"/> so that the components
-    /// can be iterated directly through the interface.
-    /// </remarks>
-    public interface IComponentRegistry<T> : IRegistry, IEnumerable<T> where T : struct, IComponent
+    public interface IComponentRegistry
     {
         /// <summary>
-        /// Gets or sets a component by index.
+        /// The number of elements in the registry.
         /// </summary>
-        /// <param name="index">The index of the component in the registry.</param>
-        /// <returns>The component.</returns>
-        T this[int index] { get; set; }
+        int Count { get; }
 
         /// <summary>
         /// Checks whether a component for an entity exists.
@@ -31,17 +24,35 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
         bool Contains(int entityID);
 
         /// <summary>
+        /// Removes a component from the registry.
+        /// </summary>
+        /// <param name="entityID">The ID of the entity.</param>
+        void Remove(int entityID);
+    }
+
+    /// <summary>
+    /// A component registry stores a set of components for a component type.
+    /// </summary>
+    /// <typeparam name="T">The component type.</typeparam>
+    /// <remarks>
+    /// A component registry implements <see cref="IEnumerable{T}"/> so that the components
+    /// can be iterated directly through the interface.
+    /// </remarks>
+    public interface IComponentRegistry<T> : IComponentRegistry, IEnumerable<T> where T : struct, IComponent
+    {
+        /// <summary>
+        /// Gets or sets a component by index.
+        /// </summary>
+        /// <param name="index">The index of the component in the registry.</param>
+        /// <returns>The component.</returns>
+        T this[int index] { get; set; }
+
+        /// <summary>
         /// Gets a component by an entity ID.
         /// </summary>
         /// <param name="entityID">The ID of the entity.</param>
         /// <returns>The component.</returns>
         T Get(int entityID);
-
-        /// <summary>
-        /// Removes a component from the registry.
-        /// </summary>
-        /// <param name="entityID">The ID of the entity.</param>
-        void Remove(int entityID);
 
         /// <summary>
         /// Sets the component for an entity.

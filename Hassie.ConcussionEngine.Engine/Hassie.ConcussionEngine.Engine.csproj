@@ -61,7 +61,6 @@
     <Compile Include="Component\Registry\CollidableComponentCR.cs" />
     <Compile Include="Component\Registry\HitboxCollisionCR.cs" />
     <Compile Include="Component\Registry\IComponentRegistry.cs" />
-    <Compile Include="Component\Registry\IRegistry.cs" />
     <Compile Include="Component\Registry\PhysicsComponentCR.cs" />
     <Compile Include="Component\Registry\PositionCR.cs" />
     <Compile Include="Component\Registry\Texture2DRenderCR.cs" />
