@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 namespace Hassie.ConcussionEngine.Engine.Component.Manager
 {
     /// <summary>
-    /// The component manager manages the component registries.
+    /// The component manager manages the component registries
+    /// and handles the termination of entities.
     /// </summary>
-    public class ComponentManager : IComponentManager
+    public class ComponentManager : IComponentManager, IComponentTerminator
     {
         // Component registries.
         // The key is the component type the registry handles.
@@ -69,6 +70,16 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
 
             // Return instance.
             return this;
+        }
+
+        public void TerminateEntity(int entityID)
+        {
+            // Run through all registries and remove component.
+            ICollection<IComponentRegistry> registries = this.registries.Values;
+            foreach (IComponentRegistry registry in registries)
+            {
+                registry.Remove(entityID);
+            }
         }
     }
 }

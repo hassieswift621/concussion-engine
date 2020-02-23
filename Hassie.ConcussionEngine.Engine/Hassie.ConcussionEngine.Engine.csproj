@@ -58,6 +58,7 @@
     <Compile Include="Component\IComponent.cs" />
     <Compile Include="Component\Manager\ComponentManager.cs" />
     <Compile Include="Component\Manager\IComponentManager.cs" />
+    <Compile Include="Component\Manager\IComponentTerminator.cs" />
     <Compile Include="Component\Registry\AbstractComponentRegistry.cs" />
     <Compile Include="Component\Registry\CircleCollisionCR.cs" />
     <Compile Include="Component\Registry\CollidableComponentCR.cs" />
