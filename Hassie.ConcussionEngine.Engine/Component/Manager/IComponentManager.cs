@@ -8,10 +8,18 @@ using System.Threading.Tasks;
 namespace Hassie.ConcussionEngine.Engine.Component.Manager
 {
     /// <summary>
-    /// A component manager manages components and component registries.
+    /// A component manager manages the component registries.
     /// </summary>
     public interface IComponentManager
     {
+        /// <summary>
+        /// Checks whether a component exists.
+        /// </summary>
+        /// <typeparam name="C">The component type.</typeparam>
+        /// <param name="entityID">The ID of the entity.</param>
+        /// <returns>True if the component exists, false otherwise.</returns>
+        bool ContainsComponent<C>(int entityID) where C : struct, IComponent;
+
         /// <summary>
         /// Gets a component.
         /// </summary>
@@ -33,7 +41,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
         /// <typeparam name="C">The component type.</typeparam>
         /// <typeparam name="R">The registry type.</typeparam>
         /// <returns>The component manager instance.</returns>
-        IComponentManager RegisterType<C, R>() where C : struct, IComponent where R : IComponentRegistry<C>;
+        IComponentManager RegisterType<C, R>() where C : struct, IComponent where R : IComponentRegistry<C>, new();
 
         /// <summary>
         /// Removes a component.
@@ -41,7 +49,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
         /// <typeparam name="C">The component type.</typeparam>
         /// <param name="entityID">The ID of the entity.</param>
         /// <returns>The component manager instance.</returns>
-        IComponentManager Remove<C>(int entityID) where C : struct, IComponent;
+        IComponentManager RemoveComponent<C>(int entityID) where C : struct, IComponent;
 
         /// <summary>
         /// Sets a component.
@@ -49,6 +57,6 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
         /// <typeparam name="C">The component type.</typeparam>
         /// <param name="component">The component.</param>
         /// <returns>The component manager instance.</returns>
-        IComponentManager Set<C>(C component) where C : struct, IComponent;
+        IComponentManager SetComponent<C>(C component) where C : struct, IComponent;
     }
 }
