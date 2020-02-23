@@ -16,6 +16,15 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
         // The key is the component type the registry handles.
         private readonly IDictionary<Type, IComponentRegistry> registries;
 
+        /// <summary>
+        /// Constructor for the component manager.
+        /// </summary>
+        public ComponentManager()
+        {
+            // Initialise registry map.
+            registries = new Dictionary<Type, IComponentRegistry>();
+        }
+
         public bool ContainsComponent<C>(int entityID) where C : struct, IComponent
         {
             return registries[typeof(C)].Contains(entityID);
