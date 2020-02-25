@@ -75,8 +75,8 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
         public void TerminateEntity(int entityID)
         {
             // Run through all registries and remove component.
-            ICollection<IComponentRegistry> registries = this.registries.Values;
-            foreach (IComponentRegistry registry in registries)
+            ICollection<IComponentRegistry> componentRegistries = registries.Values;
+            foreach (IComponentRegistry registry in componentRegistries)
             {
                 registry.Remove(entityID);
             }
