@@ -132,5 +132,35 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Component.Manager
             // Assert.
             Assert.IsFalse(componentManager.ContainsComponent<Texture2DRenderComponent>(component.EntityID));
         }
+
+        /// <summary>
+        /// Tests the termination of an entity.
+        /// </summary>
+        [Test]
+        public void TerminateEntity()
+        {
+            // Arrange.
+            int entityID = 76;
+
+            CollidableComponent collidable = new CollidableComponent(entityID);
+            PositionComponent position = new PositionComponent(entityID, 43f, 0f);
+            Texture2DRenderComponent texture = new Texture2DRenderComponent(entityID, 7, null);
+
+            componentManager
+                .RegisterType<CollidableComponent, CollidableComponentCR>()
+                .RegisterType<PositionComponent, PositionCR>()
+                .RegisterType<Texture2DRenderComponent, Texture2DRenderCR>()
+                .SetComponent(collidable)
+                .SetComponent(position)
+                .SetComponent(texture);
+
+            // Act.
+            ((IComponentTerminator)componentManager).TerminateEntity(entityID);
+
+            // Assert.
+            Assert.IsTrue(!componentManager.ContainsComponent<CollidableComponent>(entityID) &&
+                !componentManager.ContainsComponent<PositionComponent>(entityID) &&
+                !componentManager.ContainsComponent<Texture2DRenderComponent>(entityID));
+        }
     }
 }
