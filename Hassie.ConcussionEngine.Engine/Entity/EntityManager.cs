@@ -1,9 +1,5 @@
 ﻿using Hassie.ConcussionEngine.Engine.Component.Manager;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Hassie.ConcussionEngine.Engine.Entity
 {
@@ -16,6 +12,9 @@ namespace Hassie.ConcussionEngine.Engine.Entity
         // Component terminator.
         private readonly IComponentTerminator componentTerminator;
 
+        // Alive entities.
+        private readonly ISet<int> entities;
+
         /// <summary>
         /// Constructor for the entity manager.
         /// </summary>
@@ -24,17 +23,41 @@ namespace Hassie.ConcussionEngine.Engine.Entity
         {
             // Store component terminator.
             componentTerminator = terminator;
+
+            // Initialise entities set.
+            entities = new HashSet<int>();
         }
 
         public int CreateEntity()
         {
-            return EntityIDGenerator.New();
+            // Generate entity ID.
+            int id = EntityIDGenerator.New();
+
+            // Add to hash set.
+            entities.Add(id);
+
+            // Return ID.
+            return id;
         }
 
         public void DestroyEntity(int entityID)
         {
+            // Check if entity is alive.
+            if (!entities.Contains(entityID))
+            {
+                return;
+            }
+
             // Terminate entity via component terminator.
             componentTerminator.TerminateEntity(entityID);
+
+            // Remove entity from hash set.
+            entities.Remove(entityID);
+        }
+
+        public bool IsAlive(int entityID)
+        {
+            return entities.Contains(entityID);
         }
     }
 }

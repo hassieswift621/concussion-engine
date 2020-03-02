@@ -22,5 +22,12 @@ namespace Hassie.ConcussionEngine.Engine.Entity
         /// </summary>
         /// <param name="entityID">The ID of the entity.</param>
         void DestroyEntity(int entityID);
+
+        /// <summary>
+        /// Checks whether an entity is alive.
+        /// </summary>
+        /// <param name="entityID">The ID of the entity.</param>
+        /// <returns>True if the entity is alive, false otherwise.</returns>
+        bool IsAlive(int entityID);
     }
 }
