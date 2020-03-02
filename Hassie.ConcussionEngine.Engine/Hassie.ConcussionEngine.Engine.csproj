@@ -68,6 +68,8 @@
     <Compile Include="Component\Registry\PositionCR.cs" />
     <Compile Include="Component\Registry\Texture2DRenderCR.cs" />
     <Compile Include="Component\Registry\TransformCR.cs" />
+    <Compile Include="Entity\EntityManager.cs" />
+    <Compile Include="Entity\IEntityManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
