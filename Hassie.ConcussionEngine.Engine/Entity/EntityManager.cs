@@ -13,10 +13,6 @@ namespace Hassie.ConcussionEngine.Engine.Entity
     /// </summary>
     public class EntityManager : IEntityManager
     {
-        // Entities created counter.
-        // This is shared across all instances of the entity manager.
-        private static int entitiesCreated;
-
         // Component terminator.
         private readonly IComponentTerminator componentTerminator;
 
@@ -32,8 +28,7 @@ namespace Hassie.ConcussionEngine.Engine.Entity
 
         public int CreateEntity()
         {
-            // Increment entities created.
-            return ++entitiesCreated;
+            return EntityIDGenerator.New();
         }
 
         public void DestroyEntity(int entityID)
