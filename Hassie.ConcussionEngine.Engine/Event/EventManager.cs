@@ -14,7 +14,7 @@ namespace Hassie.ConcussionEngine.Engine.Event
         // Map of event listeners.
         // The key is the type of event the listener handles, which extend from EventArgs.
         // The value is the event handler, stored as a generic object to allow for a generic event manager.
-        private IDictionary<Type, object> listeners;
+        private readonly IDictionary<Type, object> listeners;
 
         public EventManager()
         {
