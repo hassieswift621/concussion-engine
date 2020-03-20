@@ -10,7 +10,7 @@ namespace Hassie.ConcussionEngine.Engine.Event
     /// An event listener listens to events.
     /// </summary>
     /// <typeparam name="T">The type of event the listener listens to.</typeparam>
-    public interface IEventListener<T> where T : EventArgs
+    public interface IEventListener<in T> where T : EventArgs
     {
         /// <summary>
         /// On event handler.
