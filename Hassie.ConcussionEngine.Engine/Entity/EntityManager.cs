@@ -40,6 +40,18 @@ namespace Hassie.ConcussionEngine.Engine.Entity
             return id;
         }
 
+        public void DestroyEntities()
+        {
+            // Run through hash set and destroy entities.
+            foreach (int entity in entities)
+            {
+                componentTerminator.TerminateEntity(entity);
+            }
+
+            // Clear hash set.
+            entities.Clear();
+        }
+
         public void DestroyEntity(int entityID)
         {
             // Check if entity is alive.

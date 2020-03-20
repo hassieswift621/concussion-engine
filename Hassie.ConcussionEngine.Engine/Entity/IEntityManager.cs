@@ -18,6 +18,11 @@ namespace Hassie.ConcussionEngine.Engine.Entity
         int CreateEntity();
 
         /// <summary>
+        /// Destroys all entities managed by this entity manager.
+        /// </summary>
+        void DestroyEntities();
+
+        /// <summary>
         /// Destroys an entity.
         /// </summary>
         /// <param name="entityID">The ID of the entity.</param>
