@@ -16,6 +16,9 @@ namespace Hassie.ConcussionEngine.Engine.Event
         // The value is the event handler, stored as a generic object to allow for a generic event manager.
         private readonly IDictionary<Type, object> listeners;
 
+        /// <summary>
+        /// Constructor for the event manager.
+        /// </summary>
         public EventManager()
         {
             // Initialise listeners map.
