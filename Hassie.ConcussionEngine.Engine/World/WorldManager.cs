@@ -7,12 +7,20 @@ using System.Threading.Tasks;
 
 namespace Hassie.ConcussionEngine.Engine.World
 {
+    /// <summary>
+    /// The world manager manages worlds.
+    /// </summary>
     public class WorldManager : IWorldManager
     {
+        // Map to store worlds.
         private readonly IDictionary<int, IWorld> worlds;
 
+        /// <summary>
+        /// Constructor for the world manager.
+        /// </summary>
         public WorldManager()
         {
+            // Initialise worlds map.
             worlds = new Dictionary<int, IWorld>();
         }
 
