@@ -23,6 +23,7 @@ namespace Hassie.ConcussionEngine.Engine.System
         /// <param name="eventManager">The event manager.</param>
         /// <param name="worldManager">The world manager.</param>
         /// <param name="graphicsDeviceManager">The graphics device manager.</param>
-        void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager, GraphicsDeviceManager graphicsDeviceManager);
+        void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
+            GraphicsDeviceManager graphicsDeviceManager);
     }
 }
