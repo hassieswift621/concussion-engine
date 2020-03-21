@@ -10,15 +10,20 @@ using System.Threading.Tasks;
 
 namespace Hassie.ConcussionEngine.Engine.Update
 {
+    /// <summary>
+    /// An update system performs general functions.
+    /// </summary>
     public abstract class AbstractUpdateSystem : IDestroyable, ISystem, IUpdateSystem
     {
-        protected IEngine engine;
-        protected IEventManager eventManager;
-        protected IWorldManager worldManager;
+        protected IEngine engine; // The engine.
+        protected IEventManager eventManager; // The event manager.
+        protected IWorldManager worldManager; // The world manager.
 
-        public abstract void Destory();
+        protected AbstractUpdateSystem() { }
 
-        public void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager)
+        public abstract void Destroy();
+
+        public virtual void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager)
         {
             // Store dependencies.
             this.engine = engine;

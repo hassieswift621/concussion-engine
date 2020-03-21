@@ -20,7 +20,9 @@ namespace Hassie.ConcussionEngine.Engine.Render
         protected IWorldManager worldManager; // The world manager.
         protected GraphicsDeviceManager graphicsDeviceManager; // The graphics device manager.
 
-        public abstract void Destory();
+        protected AbstractRenderSystem() { }
+
+        public abstract void Destroy();
 
         public virtual void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
             GraphicsDeviceManager graphicsDeviceManager)

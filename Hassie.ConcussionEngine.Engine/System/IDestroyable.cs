@@ -14,6 +14,6 @@ namespace Hassie.ConcussionEngine.Engine.System
         /// <summary>
         /// Destroys the engine subsystem.
         /// </summary>
-        void Destory();
+        void Destroy();
     }
 }

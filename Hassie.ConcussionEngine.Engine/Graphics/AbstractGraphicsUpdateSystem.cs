@@ -16,16 +16,16 @@ namespace Hassie.ConcussionEngine.Engine.Graphics
     /// </summary>
     public abstract class AbstractGraphicsUpdateSystem : IDestroyable, IGraphicsUpdateSystem, ISystem
     {
-        protected IEngine engine;
-        protected IEventManager eventManager;
-        protected IWorldManager worldManager;
-        protected GraphicsDeviceManager graphicsDeviceManager;
+        protected IEngine engine; // The engine.
+        protected IEventManager eventManager; // The event manager.
+        protected IWorldManager worldManager; // The world manager.
+        protected GraphicsDeviceManager graphicsDeviceManager; // The graphics device manager.
 
         protected AbstractGraphicsUpdateSystem() { }
 
-        public abstract void Destory();
+        public abstract void Destroy();
 
-        public void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
+        public virtual void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
             GraphicsDeviceManager graphicsDeviceManager)
         {
             // Store dependencies.
