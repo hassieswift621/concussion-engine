@@ -1,4 +1,4 @@
-﻿using Hassie.ConcussionEngine.Engine.Core;
+﻿using Hassie.ConcussionEngine.Engine.System;
 using Hassie.ConcussionEngine.Engine.Event;
 using Hassie.ConcussionEngine.Engine.World;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hassie.ConcussionEngine.Engine.System
+namespace Hassie.ConcussionEngine.Engine.Update
 {
     /// <summary>
     /// An update system performs general functions.

@@ -1,4 +1,4 @@
-﻿using Hassie.ConcussionEngine.Engine.Core;
+﻿using Hassie.ConcussionEngine.Engine.System;
 using Hassie.ConcussionEngine.Engine.Event;
 using Hassie.ConcussionEngine.Engine.World;
 using Microsoft.Xna.Framework;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hassie.ConcussionEngine.Engine.System
+namespace Hassie.ConcussionEngine.Engine.Graphics
 {
     /// <summary>
     /// A graphics update system performs graphics functions
@@ -25,7 +25,7 @@ namespace Hassie.ConcussionEngine.Engine.System
 
         public abstract void Destory();
 
-        public void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager, 
+        public void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
             GraphicsDeviceManager graphicsDeviceManager)
         {
             // Store dependencies.

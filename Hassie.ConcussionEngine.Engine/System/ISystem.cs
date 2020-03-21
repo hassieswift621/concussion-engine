@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hassie.ConcussionEngine.Engine.Core
+namespace Hassie.ConcussionEngine.Engine.System
 {
     /// <summary>
     /// An engine system handles a single part of the engine.

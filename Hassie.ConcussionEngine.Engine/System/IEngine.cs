@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hassie.ConcussionEngine.Engine.Core
+namespace Hassie.ConcussionEngine.Engine.System
 {
     /// <summary>
     /// The engine manages the operation of all subsystems for the game.
