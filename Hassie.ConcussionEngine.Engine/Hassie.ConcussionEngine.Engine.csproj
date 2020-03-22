@@ -69,6 +69,7 @@
     <Compile Include="Component\Registry\Texture2DRenderCR.cs" />
     <Compile Include="Component\Registry\TransformCR.cs" />
     <Compile Include="Render\AbstractRenderSystem.cs" />
+    <Compile Include="Render\Texture2DRenderSystem.cs" />
     <Compile Include="System\IDestroyable.cs" />
     <Compile Include="System\IEngine.cs" />
     <Compile Include="System\ISystem.cs" />
