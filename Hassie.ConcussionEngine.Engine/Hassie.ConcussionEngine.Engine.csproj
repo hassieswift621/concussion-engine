@@ -70,6 +70,7 @@
     <Compile Include="Component\Registry\TransformCR.cs" />
     <Compile Include="Input\KeyboardInputEvent.cs" />
     <Compile Include="Input\KeyboardInputSystem.cs" />
+    <Compile Include="Physics\PhysicsSystem.cs" />
     <Compile Include="Render\AbstractRenderSystem.cs" />
     <Compile Include="Render\Texture2DRenderSystem.cs" />
     <Compile Include="System\IDestroyable.cs" />
