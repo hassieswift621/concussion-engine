@@ -15,12 +15,12 @@ namespace Hassie.ConcussionEngine.Engine.Input
         /// <summary>
         /// The pressed keys.
         /// </summary>
-        public IReadOnlyList<Keys> PressedKeys;
+        public IReadOnlyList<Keys> PressedKeys { get; }
 
         /// <summary>
         /// The released keys.
         /// </summary>
-        public IReadOnlyList<Keys> ReleasedKeys;
+        public IReadOnlyList<Keys> ReleasedKeys { get; }
 
         /// <summary>
         /// Constructor for the keyboard input event.
