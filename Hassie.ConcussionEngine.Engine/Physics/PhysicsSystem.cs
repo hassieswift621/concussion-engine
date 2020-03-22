@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Hassie.ConcussionEngine.Engine.Physics
 {
+    /// <summary>
+    /// The physics system handles simple 2D physics in the game.
+    /// </summary>
     public class PhysicsSystem : AbstractUpdateSystem
     {
         public override void Destroy()
