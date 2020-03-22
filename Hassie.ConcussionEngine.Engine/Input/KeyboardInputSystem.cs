@@ -26,19 +26,16 @@ namespace Hassie.ConcussionEngine.Engine.Input
             state = new List<Keys>();
         }
 
-        public override void Destroy()
-        {
-            return;
-        }
+        public override void Destroy() { }
 
         public override void Update(GameTime gameTime)
         {
             // Get keyboard state.
             IList<Keys> keys = Keyboard.GetState().GetPressedKeys().ToList();
 
-            // Initialise lists to hold pressed and released keys.
+            // Vars to hold pressed and released keys.
             List<Keys> pressedKeys = new List<Keys>();
-            List<Keys> releasedKeys = new List<Keys>();
+            List<Keys> releasedKeys;
 
             // Run through new keyboard state and compare with old state.
             foreach (Keys key in keys)
