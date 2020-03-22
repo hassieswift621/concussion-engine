@@ -16,7 +16,10 @@ namespace Hassie.ConcussionEngine.Engine.Physics
     /// </summary>
     public class PhysicsSystem : AbstractUpdateSystem
     {
-        public override void Destroy() { }
+        public override void Destroy()
+        {
+            // Do nothing.
+        }
 
         public override void Update(GameTime gameTime)
         {
