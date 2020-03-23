@@ -18,7 +18,7 @@ namespace Hassie.ConcussionEngine.Engine.Core
     /// The engine provides all of the required components and systems for a game.
     /// This class is to be extended by a game.
     /// </summary>
-    public abstract class Engine : Game, IEngine
+    public abstract class EngineCore : Game, IEngine
     {
         // Event manager.
         protected readonly IEventManager eventManager;
@@ -49,7 +49,7 @@ namespace Hassie.ConcussionEngine.Engine.Core
         /// <summary>
         /// Constructor for the engine.
         /// </summary>
-        protected Engine()
+        protected EngineCore()
         {
             // Initialise graphics device manager.
             graphicsDeviceManager = new GraphicsDeviceManager(this);
