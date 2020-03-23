@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Hassie.ConcussionEngine.Pong
 {
-    public class Pong : Engine.Core.Engine
+    public class Pong : EngineCore
     {
     }
 }
