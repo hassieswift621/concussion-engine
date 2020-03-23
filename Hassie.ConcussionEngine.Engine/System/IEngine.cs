@@ -28,6 +28,11 @@ namespace Hassie.ConcussionEngine.Engine.System
         int ScreenWidth { get; }
 
         /// <summary>
+        /// The MonoGame service provider.
+        /// </summary>
+        IServiceProvider ServiceProvider { get; }
+
+        /// <summary>
         /// Exits the game.
         /// </summary>
         void Exit();
