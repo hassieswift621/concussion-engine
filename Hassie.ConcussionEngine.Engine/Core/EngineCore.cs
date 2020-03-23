@@ -62,6 +62,11 @@ namespace Hassie.ConcussionEngine.Engine.Core
 
             // Initialise world manager.
             worldManager = new WorldManager();
+
+            // Initialise systems lists.
+            graphicsUpdateSystems = new List<ISystem>();
+            renderSystems = new List<ISystem>();
+            updateSystems = new List<ISystem>();
         }
 
         /// <summary>
