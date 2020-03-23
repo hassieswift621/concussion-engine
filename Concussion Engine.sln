@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Eng
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Tests.Engine", "Hassie.ConcussionEngine.Tests.Engine\Hassie.ConcussionEngine.Tests.Engine.csproj", "{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Pong", "Hassie.ConcussionEngine.Pong\Hassie.ConcussionEngine.Pong.csproj", "{9B50E1AF-831F-4FB6-9528-D8DB225129C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
