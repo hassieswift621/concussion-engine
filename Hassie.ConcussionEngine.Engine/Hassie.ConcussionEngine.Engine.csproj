@@ -48,6 +48,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Collision\CircleCollisionSystem.cs" />
     <Compile Include="Collision\CollisionEvent.cs" />
     <Compile Include="Collision\HitboxCollisionSystem.cs" />
     <Compile Include="Component\Data\CircleCollisionComponent.cs" />
