@@ -32,8 +32,16 @@ namespace Hassie.ConcussionEngine.Engine.Render
         {
             base.Initialise(engine, eventManager, worldManager, graphicsDeviceManager);
 
-            // Hook up on create event for graphics device manager.
-            graphicsDeviceManager.DeviceCreated += GraphicsDeviceManager_DeviceCreated;
+            // If the graphics device has been created, initialise sprite batch.
+            if (graphicsDeviceManager.GraphicsDevice != null)
+            {
+                spriteBatch = new SpriteBatch(graphicsDeviceManager.GraphicsDevice);
+            }
+            // Else, hook up on create event for graphics device manager.
+            else
+            {
+                graphicsDeviceManager.DeviceCreated += GraphicsDeviceManager_DeviceCreated;
+            }
         }
 
         /// <summary>
