@@ -13,15 +13,13 @@ namespace Hassie.ConcussionEngine.Engine.Update
     /// <summary>
     /// An update system performs general functions.
     /// </summary>
-    public abstract class AbstractUpdateSystem : IDestroyable, ISystem, IUpdateSystem
+    public abstract class AbstractUpdateSystem : ISystem, IUpdateSystem
     {
         protected IEngine engine; // The engine.
         protected IEventManager eventManager; // The event manager.
         protected IWorldManager worldManager; // The world manager.
 
         protected AbstractUpdateSystem() { }
-
-        public abstract void Destroy();
 
         public virtual void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager)
         {

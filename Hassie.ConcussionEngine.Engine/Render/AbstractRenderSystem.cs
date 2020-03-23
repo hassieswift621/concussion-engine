@@ -13,7 +13,7 @@ namespace Hassie.ConcussionEngine.Engine.Render
     /// <summary>
     /// A render system performs rendering functions.
     /// </summary>
-    public abstract class AbstractRenderSystem : IDestroyable, IRenderSystem, ISystem
+    public abstract class AbstractRenderSystem : IRenderSystem, ISystem
     {
         protected IEngine engine; // The engine.
         protected IEventManager eventManager; // The event manager.
@@ -21,8 +21,6 @@ namespace Hassie.ConcussionEngine.Engine.Render
         protected GraphicsDeviceManager graphicsDeviceManager; // The graphics device manager.
 
         protected AbstractRenderSystem() { }
-
-        public abstract void Destroy();
 
         public virtual void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
             GraphicsDeviceManager graphicsDeviceManager)

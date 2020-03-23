@@ -14,7 +14,7 @@ namespace Hassie.ConcussionEngine.Engine.Graphics
     /// A graphics update system performs graphics functions
     /// using the <see cref="GraphicsDeviceManager"/>.
     /// </summary>
-    public abstract class AbstractGraphicsUpdateSystem : IDestroyable, IGraphicsUpdateSystem, ISystem
+    public abstract class AbstractGraphicsUpdateSystem : IGraphicsUpdateSystem, ISystem
     {
         protected IEngine engine; // The engine.
         protected IEventManager eventManager; // The event manager.
@@ -22,8 +22,6 @@ namespace Hassie.ConcussionEngine.Engine.Graphics
         protected GraphicsDeviceManager graphicsDeviceManager; // The graphics device manager.
 
         protected AbstractGraphicsUpdateSystem() { }
-
-        public abstract void Destroy();
 
         public virtual void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager,
             GraphicsDeviceManager graphicsDeviceManager)

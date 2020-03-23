@@ -16,12 +16,12 @@ namespace Hassie.ConcussionEngine.Engine.Render
     /// <summary>
     /// Renders <see cref="Texture2D"/> components.
     /// </summary>
-    public class Texture2DRenderSystem : AbstractRenderSystem
+    public class Texture2DRenderSystem : AbstractRenderSystem, IDestroyable
     {
         // The sprite batch used to render.
         private SpriteBatch spriteBatch;
 
-        public override void Destroy()
+        public void Destroy()
         {
             // Dispose sprite batch.
             spriteBatch.Dispose();

@@ -17,11 +17,6 @@ namespace Hassie.ConcussionEngine.Engine.Collision
     /// </summary>
     public class HitboxCollisionSystem : AbstractUpdateSystem
     {
-        public override void Destroy()
-        {
-            // Do nothing.
-        }
-
         public override void Update(GameTime gameTime)
         {
             // Var to store collision event data.

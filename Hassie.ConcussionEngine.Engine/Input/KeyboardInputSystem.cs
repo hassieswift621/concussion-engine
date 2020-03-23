@@ -26,11 +26,6 @@ namespace Hassie.ConcussionEngine.Engine.Input
             state = new List<Keys>();
         }
 
-        public override void Destroy()
-        {
-            // Do nothing.
-        }
-
         public override void Update(GameTime gameTime)
         {
             // Get keyboard state.
