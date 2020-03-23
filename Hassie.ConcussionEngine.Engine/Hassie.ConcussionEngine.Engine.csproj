@@ -71,7 +71,7 @@
     <Compile Include="Component\Registry\PositionCR.cs" />
     <Compile Include="Component\Registry\Texture2DRenderCR.cs" />
     <Compile Include="Component\Registry\TransformCR.cs" />
-    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Core\EngineCore.cs" />
     <Compile Include="Input\KeyboardInputEvent.cs" />
     <Compile Include="Input\KeyboardInputSystem.cs" />
     <Compile Include="Physics\PhysicsSystem.cs" />
