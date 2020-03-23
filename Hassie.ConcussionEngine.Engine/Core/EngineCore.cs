@@ -40,9 +40,9 @@ namespace Hassie.ConcussionEngine.Engine.Core
 
         public ContentManager ContentManager => Content;
 
-        public int ScreenHeight => GraphicsDevice.Viewport.Height;
+        public int ScreenHeight => graphicsDeviceManager.PreferredBackBufferHeight;
 
-        public int ScreenWidth => GraphicsDevice.Viewport.Width;
+        public int ScreenWidth => graphicsDeviceManager.PreferredBackBufferWidth;
 
         public IServiceProvider ServiceProvider => Services;
 
