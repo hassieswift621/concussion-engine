@@ -1,11 +1,12 @@
-﻿using Microsoft.Xna.Framework.Content;
+﻿using Hassie.ConcussionEngine.Engine.System;
+using Microsoft.Xna.Framework.Content;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hassie.ConcussionEngine.Engine.System
+namespace Hassie.ConcussionEngine.Engine.Core
 {
     /// <summary>
     /// The engine manages the operation of all subsystems for the game.

@@ -71,14 +71,14 @@
     <Compile Include="Component\Registry\PositionCR.cs" />
     <Compile Include="Component\Registry\Texture2DRenderCR.cs" />
     <Compile Include="Component\Registry\TransformCR.cs" />
-    <Compile Include="Engine.cs" />
+    <Compile Include="Core\Engine.cs" />
     <Compile Include="Input\KeyboardInputEvent.cs" />
     <Compile Include="Input\KeyboardInputSystem.cs" />
     <Compile Include="Physics\PhysicsSystem.cs" />
     <Compile Include="Render\AbstractRenderSystem.cs" />
     <Compile Include="Render\Texture2DRenderSystem.cs" />
     <Compile Include="System\IDestroyable.cs" />
-    <Compile Include="System\IEngine.cs" />
+    <Compile Include="Core\IEngine.cs" />
     <Compile Include="System\ISystem.cs" />
     <Compile Include="Entity\EntityManager.cs" />
     <Compile Include="Entity\EntityIDGenerator.cs" />

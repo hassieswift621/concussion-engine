@@ -12,7 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Hassie.ConcussionEngine.Engine
+namespace Hassie.ConcussionEngine.Engine.Core
 {
     /// <summary>
     /// The engine provides all of the required components and systems for a game.
