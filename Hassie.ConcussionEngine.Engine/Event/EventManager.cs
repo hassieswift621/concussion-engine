@@ -25,7 +25,7 @@ namespace Hassie.ConcussionEngine.Engine.Event
             listeners = new Dictionary<Type, object>();
         }
 
-        public void Emit<T>(T data) where T : EventArgs
+        public void Emit<T>(T args) where T : EventArgs
         {
             // If there aren't listeners for the type, return.
             if (!listeners.ContainsKey(typeof(T)))
@@ -37,7 +37,7 @@ namespace Hassie.ConcussionEngine.Engine.Event
             if (listeners.ContainsKey(typeof(T)))
             {
                 EventHandler<T> handler = (EventHandler<T>)listeners[typeof(T)];
-                handler?.Invoke(this, data);
+                handler?.Invoke(this, args);
             }
         }
 
