@@ -22,4 +22,4 @@ jobs:
         key: dotnet-packages-v1-{{ checksum "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" }}
     - run:
         name: "Build"
-        command: msbuild.exe "Concussion Engine.sln"
+        command: msbuild.exe "Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj" "Hassie.ConcussionEngine.Tests.Engine\Hassie.ConcussionEngine.Tests.Engine.csproj"
