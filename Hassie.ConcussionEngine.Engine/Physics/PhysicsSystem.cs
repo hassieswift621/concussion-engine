@@ -43,12 +43,12 @@ namespace Hassie.ConcussionEngine.Engine.Physics
                     float dt = (float)gameTime.ElapsedGameTime.TotalMilliseconds / 1000;
 
                     // Calculate velocity.
-                    physics.VelocityX += (dt * physics.AccelerationX) + physics.GravityX;
-                    physics.VelocityY += (dt * physics.AccelerationY) + physics.GravityY;
+                    physics.VelocityX += (physics.AccelerationX * dt) + physics.GravityX;
+                    physics.VelocityY += (physics.AccelerationY * dt) + physics.GravityY;
 
                     // Update position.
-                    position.X += physics.VelocityX;
-                    position.Y += physics.VelocityY;
+                    position.X += physics.VelocityX * dt;
+                    position.Y += physics.VelocityY * dt;
 
                     // Store.
                     physicsComponents[i] = physics;
