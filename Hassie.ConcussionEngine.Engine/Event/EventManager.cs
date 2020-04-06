@@ -34,11 +34,8 @@ namespace Hassie.ConcussionEngine.Engine.Event
             }
 
             // Emit event.
-            if (listeners.ContainsKey(typeof(T)))
-            {
-                EventHandler<T> handler = (EventHandler<T>)listeners[typeof(T)];
-                handler?.Invoke(this, args);
-            }
+            EventHandler<T> handler = (EventHandler<T>)listeners[typeof(T)];
+            handler?.Invoke(this, args);
         }
 
         public void Subscribe<T>(EventHandler<T> listener) where T : EventArgs
