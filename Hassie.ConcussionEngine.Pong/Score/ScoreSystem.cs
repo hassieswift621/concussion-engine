@@ -1,6 +1,7 @@
 ﻿using Hassie.ConcussionEngine.Engine.Component.Registry;
 using Hassie.ConcussionEngine.Engine.Core;
 using Hassie.ConcussionEngine.Engine.Event;
+using Hassie.ConcussionEngine.Engine.System;
 using Hassie.ConcussionEngine.Engine.Update;
 using Hassie.ConcussionEngine.Engine.World;
 using Hassie.ConcussionEngine.Pong.Component.Data;
@@ -19,7 +20,7 @@ namespace Hassie.ConcussionEngine.Pong.Score
     /// The score system keeps track of the player's scores
     /// and updates the renderable text components with the current score.
     /// </summary>
-    public class ScoreSystem : AbstractUpdateSystem, IEventListener<ScoreEvent>, IEventListener<ScoreTextCreateEvent>
+    public class ScoreSystem : AbstractUpdateSystem, IDestroyable, IEventListener<ScoreEvent>, IEventListener<ScoreTextCreateEvent>
     {
         // Lsit to store score events.
         private readonly IList<ScoreEvent> scoreEvents;
@@ -38,11 +39,18 @@ namespace Hassie.ConcussionEngine.Pong.Score
             scoreEvents = new List<ScoreEvent>();
         }
 
+        public void Destroy()
+        {
+            // Unsubscribe event listeners.
+            eventManager.Unsubscribe<ScoreEvent>(OnEvent);
+            eventManager.Unsubscribe<ScoreTextCreateEvent>(OnEvent);
+        }
+
         public override void Initialise(IEngine engine, IEventManager eventManager, IWorldManager worldManager)
         {
             base.Initialise(engine, eventManager, worldManager);
 
-            // Hook up event listeners.
+            // Subscribe event listeners.
             eventManager.Subscribe<ScoreEvent>(OnEvent);
             eventManager.Subscribe<ScoreTextCreateEvent>(OnEvent);
         }
