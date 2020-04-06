@@ -1,4 +1,5 @@
 ﻿using Hassie.ConcussionEngine.Engine.Component.Data;
+using Hassie.ConcussionEngine.Engine.Component.Manager;
 using Hassie.ConcussionEngine.Engine.Component.Registry;
 using Hassie.ConcussionEngine.Engine.Update;
 using Hassie.ConcussionEngine.Engine.World;
@@ -24,11 +25,21 @@ namespace Hassie.ConcussionEngine.Engine.Physics
             // For each running world, update physics.
             foreach (IWorld world in worlds)
             {
-                // Get required component registries.
+                // Store component manager.
+                IComponentManager componentManager = world.ComponentManager;
+
+                // Check if the world has the required component registries.
+                if (!componentManager.ContainsRegistry<PhysicsComponent>() ||
+                    !componentManager.ContainsRegistry<PositionComponent>())
+                {
+                    continue;
+                }
+
+                // Get component registries.
                 IComponentRegistry<PhysicsComponent> physicsComponents =
-                    (IComponentRegistry<PhysicsComponent>)world.ComponentManager.GetRegistry<PhysicsComponent>();
+                    (IComponentRegistry<PhysicsComponent>)componentManager.GetRegistry<PhysicsComponent>();
                 IComponentRegistry<PositionComponent> positionComponents =
-                    (IComponentRegistry<PositionComponent>)world.ComponentManager.GetRegistry<PositionComponent>();
+                    (IComponentRegistry<PositionComponent>)componentManager.GetRegistry<PositionComponent>();
 
                 // Iterate physics components.
                 for (int i = 0; i < physicsComponents.Count; i++)

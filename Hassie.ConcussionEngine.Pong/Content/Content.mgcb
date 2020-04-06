@@ -13,6 +13,13 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Exo-2-SemiBold.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:Exo-2-SemiBold.spritefont
+
 #begin paddle.png
 /importer:TextureImporter
 /processor:TextureProcessor

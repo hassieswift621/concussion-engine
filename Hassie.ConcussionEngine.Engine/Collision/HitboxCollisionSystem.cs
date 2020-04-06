@@ -1,4 +1,5 @@
 ﻿using Hassie.ConcussionEngine.Engine.Component.Data;
+using Hassie.ConcussionEngine.Engine.Component.Manager;
 using Hassie.ConcussionEngine.Engine.Component.Registry;
 using Hassie.ConcussionEngine.Engine.Update;
 using Hassie.ConcussionEngine.Engine.World;
@@ -28,15 +29,27 @@ namespace Hassie.ConcussionEngine.Engine.Collision
             // Run through running worlds and check for collisions.
             foreach (IWorld world in worlds)
             {
-                // Get required component registries.
+                // Store component manager.
+                IComponentManager componentManager = world.ComponentManager;
+
+                // Check if the world has the required component registries.
+                if (!componentManager.ContainsRegistry<CollidableComponent>() ||
+                    !componentManager.ContainsRegistry<HitboxCollisionComponent>() ||
+                    !componentManager.ContainsRegistry<PositionComponent>() ||
+                    !componentManager.ContainsRegistry<TransformComponent>())
+                {
+                    continue;
+                }
+
+                // Get component registries.
                 IComponentRegistry<CollidableComponent> collidableComponents =
-                    (IComponentRegistry<CollidableComponent>)world.ComponentManager.GetRegistry<CollidableComponent>();
+                    (IComponentRegistry<CollidableComponent>)componentManager.GetRegistry<CollidableComponent>();
                 IComponentRegistry<HitboxCollisionComponent> hitboxCollisionComponents =
-                    (IComponentRegistry<HitboxCollisionComponent>)world.ComponentManager.GetRegistry<HitboxCollisionComponent>();
+                    (IComponentRegistry<HitboxCollisionComponent>)componentManager.GetRegistry<HitboxCollisionComponent>();
                 IComponentRegistry<PositionComponent> positionComponents =
-                    (IComponentRegistry<PositionComponent>)world.ComponentManager.GetRegistry<PositionComponent>();
+                    (IComponentRegistry<PositionComponent>)componentManager.GetRegistry<PositionComponent>();
                 IComponentRegistry<TransformComponent> transformComponents =
-                    (IComponentRegistry<TransformComponent>)world.ComponentManager.GetRegistry<TransformComponent>();
+                    (IComponentRegistry<TransformComponent>)componentManager.GetRegistry<TransformComponent>();
 
                 // Iterate hitbox collision components.
                 for (int i = 0; i < hitboxCollisionComponents.Count; i++)

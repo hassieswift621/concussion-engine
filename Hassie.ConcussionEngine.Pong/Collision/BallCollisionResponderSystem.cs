@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 
 namespace Hassie.ConcussionEngine.Pong.Collision
 {
-    public class BallCollisionResponder : AbstractUpdateSystem, IDestroyable,
+    public class BallCollisionResponderSystem : AbstractUpdateSystem, IDestroyable,
         IEventListener<BallCreateEvent>, IEventListener<CollisionEvent>, IEventListener<PaddleCreateEvent>
     {
         private int ballID; // The entity ID of the ball.

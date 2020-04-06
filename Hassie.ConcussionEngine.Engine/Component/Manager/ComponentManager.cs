@@ -31,6 +31,11 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
             return registries[typeof(C)].Contains(entityID);
         }
 
+        public bool ContainsRegistry<C>() where C : struct, IComponent
+        {
+            return registries.ContainsKey(typeof(C));
+        }
+
         public C GetComponent<C>(int entityID) where C : struct, IComponent
         {
             return ((IComponentRegistry<C>)registries[typeof(C)]).Get(entityID);

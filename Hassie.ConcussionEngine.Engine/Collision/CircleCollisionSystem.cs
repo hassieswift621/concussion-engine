@@ -1,4 +1,5 @@
 ﻿using Hassie.ConcussionEngine.Engine.Component.Data;
+using Hassie.ConcussionEngine.Engine.Component.Manager;
 using Hassie.ConcussionEngine.Engine.Component.Registry;
 using Hassie.ConcussionEngine.Engine.Update;
 using Hassie.ConcussionEngine.Engine.World;
@@ -28,15 +29,27 @@ namespace Hassie.ConcussionEngine.Engine.Collision
             // Run through running worlds and check for collisions.
             foreach (IWorld world in worlds)
             {
-                // Get required component registries.
+                // Store component manager.
+                IComponentManager componentManager = world.ComponentManager;
+
+                // Check if the world has the required component registries.
+                if (!componentManager.ContainsRegistry<CircleCollisionComponent>() ||
+                    !componentManager.ContainsRegistry<CollidableComponent>() ||
+                    !componentManager.ContainsRegistry<PositionComponent>() ||
+                    !componentManager.ContainsRegistry<TransformComponent>())
+                {
+                    continue;
+                }
+
+                // Get component registries.
                 IComponentRegistry<CircleCollisionComponent> circleCollisionComponents =
-                    (IComponentRegistry<CircleCollisionComponent>)world.ComponentManager.GetRegistry<CircleCollisionComponent>();
+                    (IComponentRegistry<CircleCollisionComponent>)componentManager.GetRegistry<CircleCollisionComponent>();
                 IComponentRegistry<CollidableComponent> collidableComponents =
-                    (IComponentRegistry<CollidableComponent>)world.ComponentManager.GetRegistry<CollidableComponent>();
+                    (IComponentRegistry<CollidableComponent>)componentManager.GetRegistry<CollidableComponent>();
                 IComponentRegistry<PositionComponent> positionComponents =
-                    (IComponentRegistry<PositionComponent>)world.ComponentManager.GetRegistry<PositionComponent>();
+                    (IComponentRegistry<PositionComponent>)componentManager.GetRegistry<PositionComponent>();
                 IComponentRegistry<TransformComponent> transformComponents =
-                    (IComponentRegistry<TransformComponent>)world.ComponentManager.GetRegistry<TransformComponent>();
+                    (IComponentRegistry<TransformComponent>)componentManager.GetRegistry<TransformComponent>();
 
                 // Iterate circle collision components.
                 for (int i = 0; i < circleCollisionComponents.Count; i++)

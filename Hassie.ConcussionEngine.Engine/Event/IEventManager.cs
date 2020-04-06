@@ -16,7 +16,7 @@ namespace Hassie.ConcussionEngine.Engine.Event
         /// </summary>
         /// <typeparam name="T">The type of event.</typeparam>
         /// <param name="data">The event data.</param>
-        void Emit<T>(T data) where T : EventArgs;
+        void Emit<T>(T args) where T : EventArgs;
 
         /// <summary>
         /// Subscribes an event listener.

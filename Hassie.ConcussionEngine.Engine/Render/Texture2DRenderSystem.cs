@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Hassie.ConcussionEngine.Engine.Component.Manager;
 
 namespace Hassie.ConcussionEngine.Engine.Render
 {
@@ -84,13 +85,24 @@ namespace Hassie.ConcussionEngine.Engine.Render
         /// <param name="world">The world to render.</param>
         private void RenderWorld(IWorld world)
         {
-            // Get required component registries.
+            // Store component manager.
+            IComponentManager componentManager = world.ComponentManager;
+
+            // Check if the world has the required component registries.
+            if (!componentManager.ContainsRegistry<PositionComponent>() ||
+                !componentManager.ContainsRegistry<Texture2DRenderComponent>() ||
+                !componentManager.ContainsRegistry<TransformComponent>())
+            {
+                return;
+            }
+
+            // Get component registries.
             IComponentRegistry<PositionComponent> positionComponents =
-                (IComponentRegistry<PositionComponent>)world.ComponentManager.GetRegistry<PositionComponent>();
+                (IComponentRegistry<PositionComponent>)componentManager.GetRegistry<PositionComponent>();
             IComponentRegistry<Texture2DRenderComponent> texture2DComponents =
-                (IComponentRegistry<Texture2DRenderComponent>)world.ComponentManager.GetRegistry<Texture2DRenderComponent>();
+                (IComponentRegistry<Texture2DRenderComponent>)componentManager.GetRegistry<Texture2DRenderComponent>();
             IComponentRegistry<TransformComponent> transformComponents =
-                (IComponentRegistry<TransformComponent>)world.ComponentManager.GetRegistry<TransformComponent>();
+                (IComponentRegistry<TransformComponent>)componentManager.GetRegistry<TransformComponent>();
 
             // Begin sprite batch.
             spriteBatch.Begin();

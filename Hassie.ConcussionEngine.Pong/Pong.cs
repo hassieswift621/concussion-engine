@@ -5,6 +5,9 @@ using Hassie.ConcussionEngine.Engine.Physics;
 using Hassie.ConcussionEngine.Engine.Render;
 using Hassie.ConcussionEngine.Pong.Collision;
 using Hassie.ConcussionEngine.Pong.Input;
+using Hassie.ConcussionEngine.Pong.Physics;
+using Hassie.ConcussionEngine.Pong.Render;
+using Hassie.ConcussionEngine.Pong.Score;
 using Hassie.ConcussionEngine.Pong.World;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
@@ -18,11 +21,11 @@ namespace Hassie.ConcussionEngine.Pong
 {
     public class Pong : EngineCore
     {
-        protected override void Draw(GameTime gameTime)
+        public Pong() : base()
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            base.Draw(gameTime);
+            // Set resolution to 1280x720.
+            graphicsDeviceManager.PreferredBackBufferWidth = 1280;
+            graphicsDeviceManager.PreferredBackBufferHeight = 720;
         }
 
         protected override void Initialize()
@@ -36,20 +39,33 @@ namespace Hassie.ConcussionEngine.Pong
             RegisterSystem(new Texture2DRenderSystem());
 
             // Game.
-            RegisterSystem(new BallCollisionResponder());
+            RegisterSystem(new BallBoundarySystem());
+            RegisterSystem(new BallCollisionResponderSystem());
             RegisterSystem(new PlayerInputSystem());
+            RegisterSystem(new TextRenderSystem());
+            RegisterSystem(new ScoreSystem());
 
-            base.Initialize();
-        }
+            
+            // Create worlds.
 
-        protected override void LoadContent()
-        {
             // Create main game world.
             PongWorld mainWorld = new PongWorld(this, (int)WorldID.PongWorld, new ContentManager(ServiceProvider, "Content"), eventManager);
             worldManager.AddWorld(mainWorld);
             worldManager.RunWorld((int)WorldID.PongWorld);
 
-            base.LoadContent();
+            // Create HUD world.
+            HudWorld hudWorld = new HudWorld(this, (int)WorldID.HudWorld, new ContentManager(ServiceProvider, "Content"), eventManager);
+            worldManager.AddWorld(hudWorld);
+            worldManager.RunWorld((int)WorldID.HudWorld);
+
+            base.Initialize();
+        }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            GraphicsDevice.Clear(Color.DarkOrange);
+
+            base.Draw(gameTime);
         }
     }
 }

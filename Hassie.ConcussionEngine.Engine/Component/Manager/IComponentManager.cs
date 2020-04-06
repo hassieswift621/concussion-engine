@@ -21,6 +21,13 @@ namespace Hassie.ConcussionEngine.Engine.Component.Manager
         bool ContainsComponent<C>(int entityID) where C : struct, IComponent;
 
         /// <summary>
+        /// Checks whether a registry exists for a component type.
+        /// </summary>
+        /// <typeparam name="C">The component type.</typeparam>
+        /// <returns>True if the registry exists, false otherwise.</returns>
+        bool ContainsRegistry<C>() where C : struct, IComponent;
+
+        /// <summary>
         /// Gets a component.
         /// </summary>
         /// <typeparam name="C">The component type.</typeparam>

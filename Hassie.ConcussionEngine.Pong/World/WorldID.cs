@@ -11,6 +11,7 @@ namespace Hassie.ConcussionEngine.Pong.World
     /// </summary>
     public enum WorldID
     {
-        PongWorld = 1
+        PongWorld = 1,
+        HudWorld = 2
     }
 }
