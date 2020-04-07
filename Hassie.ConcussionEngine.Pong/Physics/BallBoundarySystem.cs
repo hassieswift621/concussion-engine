@@ -55,7 +55,7 @@ namespace Hassie.ConcussionEngine.Pong.Physics
             // Flag to store whether the ball has been reset.
             bool reset = false;
 
-            // If the ball is off screen, replace in middle, reset velocity and emit score event.
+            // If the ball is off screen on x axis, replace in middle, reset velocity and emit score event.
             if (position.X <= 0 && Math.Sign(physics.VelocityX) == -1)
             {
                 physics.VelocityX = 150;
@@ -82,6 +82,18 @@ namespace Hassie.ConcussionEngine.Pong.Physics
                 // Update components.
                 world.ComponentManager.SetComponent(physics);
                 world.ComponentManager.SetComponent(position);
+            }
+
+            // If ball is off y axis, flip direction.
+            if (position.Y >= engine.ScreenHeight && Math.Sign(physics.VelocityY) == 1)
+            {
+                physics.VelocityY = -150;
+                world.ComponentManager.SetComponent(physics);
+            }
+            else if (position.Y <= 0 && Math.Sign(physics.VelocityY) == -1)
+            {
+                physics.VelocityY = 150;
+                world.ComponentManager.SetComponent(physics);
             }
         }
     }

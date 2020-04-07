@@ -57,7 +57,7 @@ namespace Hassie.ConcussionEngine.Pong.World
 
                 // Create components.
                 HitboxCollisionComponent ballHitbox = new HitboxCollisionComponent(ballID);
-                PhysicsComponent ballPhysics = new PhysicsComponent(ballID, 0, 0, 0, 0, 1, 150, 0);
+                PhysicsComponent ballPhysics = new PhysicsComponent(ballID, 0, 0, 0, 0, 1, 150, 150);
                 PositionComponent ballPosition = new PositionComponent(ballID, 
                     (engine.ScreenWidth / 2) - (ballTexture.Width / 2), (engine.ScreenHeight / 2) - (ballTexture.Height / 2));
                 Texture2DRenderComponent ballRender = new Texture2DRenderComponent(ballID, 1, ballTexture);
