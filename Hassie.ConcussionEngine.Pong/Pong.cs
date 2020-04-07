@@ -49,12 +49,12 @@ namespace Hassie.ConcussionEngine.Pong
             // Create worlds.
 
             // Create main game world.
-            PongWorld mainWorld = new PongWorld(this, (int)WorldID.PongWorld, new ContentManager(ServiceProvider, "Content"), eventManager);
+            PongWorld mainWorld = new PongWorld(this, (int)WorldID.PongWorld, ContentManager, eventManager);
             worldManager.AddWorld(mainWorld);
             worldManager.RunWorld((int)WorldID.PongWorld);
 
             // Create HUD world.
-            HudWorld hudWorld = new HudWorld(this, (int)WorldID.HudWorld, new ContentManager(ServiceProvider, "Content"), eventManager);
+            HudWorld hudWorld = new HudWorld(this, (int)WorldID.HudWorld, ContentManager, eventManager);
             worldManager.AddWorld(hudWorld);
             worldManager.RunWorld((int)WorldID.HudWorld);
 
