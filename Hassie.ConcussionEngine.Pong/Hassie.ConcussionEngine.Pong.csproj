@@ -49,6 +49,8 @@
     <MonoGameContentReference Include="Content\Content.mgcb">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </MonoGameContentReference>
+    <None Include="Content\Exo-2-SemiBold.spritefont" />
+    <None Include="Content\Exo2-SemiBold.ttf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
