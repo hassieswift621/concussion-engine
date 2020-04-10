@@ -63,6 +63,9 @@
     <Compile Include="Component\Registry\AbstractComponentRegistryTest.cs" />
     <Compile Include="Component\Registry\Texture2DRenderCRTest.cs" />
     <Compile Include="Entity\EntityManagerTest.cs" />
+    <Compile Include="World\MockupWorld.cs" />
+    <Compile Include="World\WorldStateTest.cs" />
+    <Compile Include="World\WorldManagerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj">
@@ -70,6 +73,7 @@
       <Name>Hassie.ConcussionEngine.Engine</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
