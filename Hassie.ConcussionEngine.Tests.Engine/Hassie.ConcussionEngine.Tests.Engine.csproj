@@ -63,7 +63,11 @@
     <Compile Include="Component\Registry\AbstractComponentRegistryTest.cs" />
     <Compile Include="Component\Registry\Texture2DRenderCRTest.cs" />
     <Compile Include="Entity\EntityManagerTest.cs" />
-    <Compile Include="World\MockupWorld.cs" />
+    <Compile Include="Event\EventManagerTest.cs" />
+    <Compile Include="Event\MockEvent.cs" />
+    <Compile Include="Event\MockEventListener.cs" />
+    <Compile Include="Event\MockEventListenerFail.cs" />
+    <Compile Include="World\MockWorld.cs" />
     <Compile Include="World\WorldStateTest.cs" />
     <Compile Include="World\WorldManagerTest.cs" />
   </ItemGroup>
