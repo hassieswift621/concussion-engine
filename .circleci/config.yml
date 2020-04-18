@@ -22,9 +22,7 @@ jobs:
         key: dotnet-packages-v1-{{ checksum "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" }}
     - run:
         name: "Build Engine and Pong"
-        command: dotnet build --configuration Release
+        command: dotnet build -c Release
     - run:
         name: "Run Tests"
-        command: dotnet.exe test -v n --results-directory:test_coverage --collect:"Code Coverage"
-    - store_artifacts:
-      path: C:\Users\circleci\project\test_coverage
+        command: dotnet.exe test
