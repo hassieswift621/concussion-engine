@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29613.14
+VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Engine", "Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj", "{17416E78-0177-4A02-992D-53FE47E98476}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hassie.ConcussionEngine.Pong", "Hassie.ConcussionEngine.Pong\Hassie.ConcussionEngine.Pong.csproj", "{630A6B3E-C270-4FDB-BE0F-7F9930E9BDFB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Tests.Engine", "Hassie.ConcussionEngine.Tests.Engine\Hassie.ConcussionEngine.Tests.Engine.csproj", "{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Engine", "Hassie.ConcussionEngine.Engine\Hassie.ConcussionEngine.Engine.csproj", "{D803D4EB-57AB-4F00-94C0-9EAC8EA07AD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Pong", "Hassie.ConcussionEngine.Pong\Hassie.ConcussionEngine.Pong.csproj", "{9B50E1AF-831F-4FB6-9528-D8DB225129C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hassie.ConcussionEngine.Tests.Engine", "Hassie.ConcussionEngine.Tests.Engine\Hassie.ConcussionEngine.Tests.Engine.csproj", "{E84728FB-06FE-4D3B-B677-DABDB907F213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,23 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{17416E78-0177-4A02-992D-53FE47E98476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17416E78-0177-4A02-992D-53FE47E98476}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17416E78-0177-4A02-992D-53FE47E98476}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17416E78-0177-4A02-992D-53FE47E98476}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5A0ABDB0-F2F6-492C-A3B2-7B29FD31F4C0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B50E1AF-831F-4FB6-9528-D8DB225129C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{630A6B3E-C270-4FDB-BE0F-7F9930E9BDFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{630A6B3E-C270-4FDB-BE0F-7F9930E9BDFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{630A6B3E-C270-4FDB-BE0F-7F9930E9BDFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{630A6B3E-C270-4FDB-BE0F-7F9930E9BDFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D803D4EB-57AB-4F00-94C0-9EAC8EA07AD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D803D4EB-57AB-4F00-94C0-9EAC8EA07AD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D803D4EB-57AB-4F00-94C0-9EAC8EA07AD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D803D4EB-57AB-4F00-94C0-9EAC8EA07AD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E84728FB-06FE-4D3B-B677-DABDB907F213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E84728FB-06FE-4D3B-B677-DABDB907F213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E84728FB-06FE-4D3B-B677-DABDB907F213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E84728FB-06FE-4D3B-B677-DABDB907F213}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0BF93ABF-8C4E-41B3-B9CE-96844AAD0817}
+		SolutionGuid = {3CE37CDA-A657-4DBB-B786-C6415AAE954C}
 	EndGlobalSection
 EndGlobal
