@@ -51,12 +51,12 @@ namespace Hassie.ConcussionEngine.Tests.Engine.Entity
             IEntityManager entityManager3 = new EntityManager((IComponentTerminator)componentManager3);
 
             // Act.
-            int id1 = entityManager1.CreateEntity();
-            int id2 = entityManager2.CreateEntity();
-            int id3 = entityManager3.CreateEntity();
+            int id4 = entityManager1.CreateEntity();
+            int id5 = entityManager2.CreateEntity();
+            int id6 = entityManager3.CreateEntity();
 
             // Assert.
-            Assert.IsTrue(id1 == 1 && id2 == 2 && id3 == 3);
+            Assert.IsTrue(id4 == 4 && id5 == 5 && id6 == 6);
         }
 
         /// <summary>
