@@ -26,6 +26,3 @@ jobs:
     - run:
         name: "Build Tests"
         command: msbuild "Hassie.ConcussionEngine.Tests.Engine\Hassie.ConcussionEngine.Tests.Engine.csproj"
-    - run:
-        name: "Run Tests"
-        command: mstest /testcontainer:"Hassie.ConcussionEngine.Tests.Engine\Hassie.ConcussionEngine.Tests.Engine.csproj\bin\Debug\Hassie.ConcussionEngine.Tests.Engine.dll"
