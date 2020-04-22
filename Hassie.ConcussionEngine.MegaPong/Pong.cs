@@ -24,7 +24,7 @@ namespace Hassie.ConcussionEngine.MegaPong
         // Number of pong balls to spawn.
         public static int BallCount = 500;
 
-        public Pong() : base()
+        public Pong()
         {
             // Set resolution to 1280x720.
             graphicsDeviceManager.PreferredBackBufferWidth = 1280;

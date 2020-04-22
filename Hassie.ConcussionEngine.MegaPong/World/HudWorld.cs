@@ -55,8 +55,8 @@ namespace Hassie.ConcussionEngine.MegaPong.World
                 SpriteFont pongFont = ContentManager.Load<SpriteFont>("Exo-2-SemiBold");
 
                 // Create components.
-                PositionComponent pongTextPosition = new PositionComponent(pongTextID, engine.ScreenWidth / 2 - 40, 50);
-                TextRenderComponent pongTextSpriteFont = new TextRenderComponent(pongTextID, Color.Black, pongFont, "PONG");
+                PositionComponent pongTextPosition = new PositionComponent(pongTextID, engine.ScreenWidth / 2 - 80, 50);
+                TextRenderComponent pongTextSpriteFont = new TextRenderComponent(pongTextID, Color.Black, pongFont, "MEGA PONG");
 
                 // Add components.
                 ComponentManager
@@ -103,6 +103,17 @@ namespace Hassie.ConcussionEngine.MegaPong.World
             }
 
             base.Run();
+        }
+
+        public override void Stop(bool reset)
+        {
+            if (reset)
+            {
+                // Destroy entities.
+                EntityManager.DestroyEntities();
+            }
+
+            base.Stop(reset);
         }
     }
 }
