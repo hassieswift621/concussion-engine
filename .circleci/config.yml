@@ -21,8 +21,11 @@ jobs:
           - C:\Users\circleci\.nuget\packages
         key: dotnet-packages-v1-{{ checksum "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" }}
     - run:
-        name: "Build Engine and Pong"
-        command: dotnet build -c Release
+        name: "Build Engine"
+        command: dotnet build "./Hassie.ConcussionEngine.Engine/Hassie.ConcussionEngine.Engine.csproj" -c Release
+    - run:
+        name: "Build Pong"
+        command: dotnet build "./Hassie.ConcussionEngine.Pong/Hassie.ConcussionEngine.Pong.csproj" -c Release
     - run:
         name: "Run Tests"
         command: dotnet.exe test
