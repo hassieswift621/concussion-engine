@@ -59,7 +59,7 @@ namespace Hassie.ConcussionEngine.Engine.Component.Registry
             }
 
             // Otherwise, move last element of components list into the component index of the entity that is about to be removed.
-            // Otherwise, we'll have to update every index in the map from the point of removal.
+            // This keeps the components tightly packed in memory.
             T component = components.Last();
             components[entities[entityID]] = component;
             components.RemoveAt(Count - 1);
